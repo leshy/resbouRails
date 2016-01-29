@@ -57,7 +57,7 @@ calendar = ->
 
   calendar {}
 
-  _colors = [ "#B35982", "#9BC362", "#4F9D66", "#D4796A" ]
+  _colors = [ "#B35982", "#9BC362", "#4F9D66", "#6ab7d4" ]
 
   color = window.color = ->
     ret = _colors.shift(); _colors.push ret

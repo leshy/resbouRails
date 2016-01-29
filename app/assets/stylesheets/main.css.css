@@ -1143,6 +1143,9 @@ body {
 .boxShadow {
   box-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.2);
 }
+.boxShadowBig {
+  box-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.2);
+}
 .anim {
   transition: all 0.5s ease;
 }
@@ -1161,12 +1164,6 @@ body {
   font-weight: bold;
   font-size: 2.5vmin;
 }
-.login .title {
-  text-shadow: 0.1vmin 0.1vmin 0 rgba(1, 1, 1, 0.2);
-  font-size: 5vmin;
-  font-weight: bold;
-  margin-bottom: 10vmin;
-}
 .login .loader {
   transition: all 0.5s ease;
 }
@@ -1184,13 +1181,14 @@ body {
   color: #3b5998;
 }
 .login .loader .avatar {
+  box-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.2);
   cursor: pointer;
   width: 10vmin;
   height: 10vmin;
   border-radius: 50%;
 }
 .login.loggedin {
-  top: 2vmin;
+  top: 10vmin;
   left: 10vmin;
 }
 .main {
@@ -1200,10 +1198,14 @@ body {
   display: none;
 }
 .main .import {
+  text-align: center;
+  position: relative;
+  top: -10vmin;
   font-size: 2vmin;
   margin-bottom: 2vmin;
 }
 .main .calendar {
+  padding-top: 2vmin;
   height: 100vmin;
   width: 100vmin;
 }
@@ -1212,6 +1214,9 @@ body {
 }
 .main .calendar .fc-day:hover {
   background: #f5f5f5;
+}
+.main .calendar .fc-day-header {
+  padding: 0.5vmin;
 }
 .main .calendar .fc-day-number {
   background: #eee;
@@ -1229,5 +1234,6 @@ body {
   opacity: 1;
 }
 .main .fc-head {
-  text-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.25);
+  text-shadow: 0.1vmin 0.1vmin 0 rgba(1, 1, 1, 0.2);
+  background: #eee;
 }
