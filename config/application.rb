@@ -28,7 +28,7 @@ module Resbourails
 #    config.serve_static_assets = true
 
     
-    config.browserify_rails.commandline_options = "-t debowerify -t ejsify -t coffeeify --extension=\".js.coffee\""
+    config.browserify_rails.commandline_options = "-t debowerify -t coffeeify --extension=\".js.coffee\""
 
   end
 end
