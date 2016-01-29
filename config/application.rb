@@ -28,7 +28,7 @@ module Resbourails
 #    config.serve_static_assets = true
 
     
-    config.web_console.whitelisted_ips = '0.0.0.0/0'
+#    config.web_console.whitelisted_ips = '0.0.0.0/0'
     config.browserify_rails.commandline_options = "-t debowerify -t coffeeify --extension=\".js.coffee\""
 
   end
