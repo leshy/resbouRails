@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'session/new'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  get 'auth/:provider/callback', to: 'session#create'
+  get 'self', to: 'user#show'
+  get 'logout', to: 'session#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

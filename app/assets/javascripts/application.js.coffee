@@ -4,12 +4,30 @@ fullcalendar =  require 'fullcalendar'
 h = require 'helpers'
 ical = require 'ical'
 
-console.log "HI THERE"
-
 env = window.env = {}
+popupCenter = (url, width, height, name) ->
+  left = (screen.width/2)-(width/2);
+  top = (screen.height/2)-(height/2);
+  window.open url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top
+
+window.loggedin = ->
+  console.log "LOGGEDIN!"
 
 $(document).ready ->
-  console.log "READY!"
+  console.log "LALA"
+  $('.login').click (e) ->
+    popupCenter "/auth/facebook", 500, 500, "facebook login"
+
+    login = $('.login')
+    login.css opacity: 0
+    h.wait 500, ->
+      login.html("<i class='fa fa-spinner fa-pulse' />")
+      login.css opacity: 1
+
+    e.stopPropagation()
+    return false
+
+
   calendar = env.calendar = (args...) ->
     el = $('#calendar')
     el.fullCalendar.apply el, args

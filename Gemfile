@@ -50,3 +50,5 @@ gem 'browserify-rails'
 gem "bower-rails", "~> 0.10.0"
 gem 'therubyracer'
 gem 'less-rails', '~> 2.7.0'
+gem 'omniauth-facebook'
+gem "font-awesome-rails"

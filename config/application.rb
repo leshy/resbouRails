@@ -22,7 +22,13 @@ module Resbourails
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.app_generators.stylesheet_engine :less
+    
+#    config.app_generators.stylesheet_engine :less
+#    config.less.compress = true
+#    config.serve_static_assets = true
+
+    
     config.browserify_rails.commandline_options = "-t debowerify -t ejsify -t coffeeify --extension=\".js.coffee\""
+
   end
 end

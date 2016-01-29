@@ -1,4 +1,32 @@
+<% content_for :head do %>
+  <script type="text/javascript"> window.user = <%= @user.to_json.html_safe %> </script>
+<% end %>
+
+
 <center>
-  import ICS: <input type="file" id="files" accept="text/calendar" name="files[]" multiple />
-  <div id="calendar"></div>
+  <div class="title">
+    ResbouCal
+  </div>
+  
+  <div class="login">
+    <i class="fa fa-facebook-official"></i>
+    <div class="text">
+      Login
+    </div>
+  </div>
+
+  <div class="main">
+    
+    <div class="user">
+    </div>
+    
+    <div class="import">
+      import ICS: <input type="file" id="files" accept="text/calendar" name="files[]" multiple />
+    </div>
+    
+    <div class="calendar">
+    </div>
+    
+  </div>
 </center>
+

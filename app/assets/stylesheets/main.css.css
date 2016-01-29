@@ -1128,7 +1128,7 @@ body {
   background: black;
   background: white;
   overflow: hidden;
-  font-family: 'Monospace', 'Trebuchet MS', 'Tahoma', 'Arial';
+  font-family: 'Helvetica', 'Monospace', 'Trebuchet MS', 'Tahoma', 'Arial';
   font-size: 1.25vmin;
 }
 .textShadow {
@@ -1136,6 +1136,9 @@ body {
 }
 .textShadowBig {
   text-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.25);
+}
+.textShadowBigBig {
+  text-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.25);
 }
 .boxShadow {
   box-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.2);
@@ -1146,26 +1149,58 @@ body {
 .animFast {
   transition: all 0.25s ease;
 }
-#calendar {
+.title {
+  text-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.25);
+  font-size: 5vmin;
+  font-weight: bold;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login {
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 2.5vmin;
+}
+.login .text {
+  text-shadow: 0.1vmin 0.1vmin 0 rgba(1, 1, 1, 0.2);
+}
+.login i {
+  text-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.25);
+  font-size: 10vmin;
+  cursor: pointer;
+}
+.login:hover {
+  color: #3b5998;
+}
+.main {
+  display: none;
+}
+.calendar {
   height: 100vmin;
   width: 100vmin;
 }
-#calendar .fc-day {
+.calendar .fc-day {
   transition: all 0.25s ease;
 }
-#calendar .fc-day:hover {
+.calendar .fc-day:hover {
   background: #f5f5f5;
 }
-#calendar .fc-day-number {
+.calendar .fc-day-number {
   background: #eee;
 }
-#calendar .fc-day-grid-event {
+.calendar .fc-day-grid-event {
   transition: all 0.5s ease;
   box-shadow: 0.25vmin 0.25vmin 0 rgba(1, 1, 1, 0.2);
   cursor: pointer;
   text-shadow: 0.1vmin 0.1vmin 0 rgba(1, 1, 1, 0.2);
 }
-#calendar .fc-day-grid-event:hover {
+.calendar .fc-day-grid-event:hover {
   padding: 1vmin;
 }
 .fc-head {
