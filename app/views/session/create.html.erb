@@ -1,0 +1,8 @@
+<% content_for :head do %>
+<script type="text/javascript">
+  if(window.opener) {
+  window.opener.loggedin(<%= @user.to_json.html_safe %>)
+  window.close()
+  }
+</script>
+<% end %>

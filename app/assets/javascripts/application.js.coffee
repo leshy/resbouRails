@@ -10,26 +10,50 @@ popupCenter = (url, width, height, name) ->
   top = (screen.height/2)-(height/2);
   window.open url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top
 
-window.loggedin = ->
-  console.log "LOGGEDIN!"
+login = (callback) ->
+  login = $('.loader')
 
-$(document).ready ->
-  console.log "LALA"
-  $('.login').click (e) ->
-    popupCenter "/auth/facebook", 500, 500, "facebook login"
+  if window.user
+    renderUser()
+    $('.login').addClass "loggedin"
+    $('.login').show()
+    callback()
 
-    login = $('.login')
-    login.css opacity: 0
-    h.wait 500, ->
-      login.html("<i class='fa fa-spinner fa-pulse' />")
-      login.css opacity: 1
+  else
+    $('.login').addClass "animSlow"
+    $('.login').show()
 
-    e.stopPropagation()
-    return false
+    login.one 'click', (e) ->
+      popupCenter "/auth/facebook", 700, 700, "facebook login"
+      login.css opacity: 0
+      h.wait 500, ->
+        login.html("<i class='fa fa-spinner fa-pulse' />")
+        login.css opacity: 1
 
+      e.stopPropagation()
+      return false
+
+    window.loggedin = (user) ->
+      window.user = user
+      console.log "GOT USER", user
+      login.css opacity: 0
+      h.wait 500, ->
+        renderUser()
+        login.css opacity: 1
+        h.wait 1000, ->
+          $('.login').addClass('loggedin')
+          h.wait 1000, callback
+
+renderUser = ->
+  $('.loader').html("<img class='avatar' src='#{user.image}' /><div class='text'>#{user.name}</div>")
+  $('.loader').click -> document.location = '/logout'
+
+
+calendar = ->
+  $('.main').fadeIn()
 
   calendar = env.calendar = (args...) ->
-    el = $('#calendar')
+    el = $('.calendar')
     el.fullCalendar.apply el, args
 
   calendar {}
@@ -63,3 +87,6 @@ $(document).ready ->
         }
 
       reader.readAsText file
+
+$(document).ready ->
+  login -> calendar()

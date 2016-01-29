@@ -31,77 +31,106 @@ body {
 
 .animFast { transition: all 0.25s ease; }
 
-.title {
-    .textShadowBig;
-    font-size: 5vmin;
-    font-weight: bold;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
+.animSlow { transition: all 1s ease; }
+
+
 
 .login {
-    .anim;
+   display: none;    
+    .title {
+        .textShadow;
+        font-size: 5vmin;
+        font-weight: bold;
+        margin-bottom: 10vmin;
+    }
+    
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-weight: bold;
     font-size: 2.5vmin;
     
-    .text {
-        .textShadow;
-    }
-    
-    i {
-        .textShadowBigBig;
-        font-size: 10vmin;
-        cursor: pointer;
+    .loader {
+        .anim;
+
+        .text {
+            .textShadow;
+            margin-top: 2vmin;
+        }
+        
+        i {
+            .anim;
+            .textShadowBigBig;
+            font-size: 10vmin;
+            cursor: pointer;
+        }
+
+        i:hover {
+            color: #3b5998;
+
+        }
+        
+
+        .avatar {
+            cursor: pointer;
+            width: 10vmin;
+            height: 10vmin;
+
+            border-radius: 50%;
+
+        }
+
     }
     
 }
 
 
-
-.login:hover {
-    color: #3b5998;
+.login.loggedin {
+    top: 2vmin;
+    left:10vmin;
 }
+
+
 
 .main {
-    display: none;    
+   display: none;    
+
+  .calendar {
+      height: 100vmin;
+      width: 100vmin;
+
+      .fc-day {
+          .animFast;
+      }
+      .fc-day:hover {
+          background: #f5f5f5;
+      }
+      .fc-day-number {
+          background: #eee;
+          font-weight: bold;
+      }
+
+      .fc-day-grid-event {
+          .anim;
+          .boxShadow;
+          .textShadow;
+          padding: 0.5vmin;
+          opacity: 1;
+          cursor: pointer;
+      }
+      .fc-day-grid-event:hover {
+          opacity: 1;
+      }
+
+  }
+
+  .fc-head {
+      .textShadowBig;
+  }
+
+
+
+
+
 }
-
-.calendar {
-    height: 100vmin;
-    width: 100vmin;
-
-    .fc-day {
-        .animFast;
-    }
-    .fc-day:hover {
-        background: #f5f5f5;
-    }
-    .fc-day-number {
-            background: #eee;
-    }
-    
-    .fc-day-grid-event {
-        .anim;
-        .boxShadow;
-        cursor: pointer;
-        .textShadow;
-    }
-    .fc-day-grid-event:hover {
-        padding: 1vmin;
-    }
-
-}
-
-.fc-head {
-    .textShadowBig;
-}
-
-
-
-
