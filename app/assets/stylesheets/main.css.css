@@ -1194,7 +1194,14 @@ body {
   left: 10vmin;
 }
 .main {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
+}
+.main .import {
+  font-size: 2vmin;
+  margin-bottom: 2vmin;
 }
 .main .calendar {
   height: 100vmin;
