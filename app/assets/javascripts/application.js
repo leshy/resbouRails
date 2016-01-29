@@ -33,7 +33,13 @@
       $('.login').addClass("animSlow");
       $('.login').show();
       login.one('click', function(e) {
-        popupCenter("/auth/facebook", 700, 700, "facebook login");
+        var size;
+        if (screen.height < screen.width) {
+          size = screen.height;
+        } else {
+          size = screen.width;
+        }
+        popupCenter("/auth/facebook", size, size, "facebook login");
         login.css({
           opacity: 0
         });

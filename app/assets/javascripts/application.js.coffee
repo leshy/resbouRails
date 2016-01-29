@@ -24,7 +24,8 @@ login = (callback) ->
     $('.login').show()
 
     login.one 'click', (e) ->
-      popupCenter "/auth/facebook", 700, 700, "facebook login"
+      if screen.height < screen.width then size = screen.height else size = screen.width
+      popupCenter "/auth/facebook", size, size, "facebook login"
       login.css opacity: 0
       h.wait 500, ->
         login.html("<i class='fa fa-spinner fa-pulse' />")
