@@ -45,9 +45,8 @@ login = (callback) ->
           h.wait 1000, callback
 
 renderUser = ->
-  $('.loader').html("<img class='avatar' src='#{user.image}' /><div class='text'>#{user.name}</div>")
   $('.loader').click -> document.location = '/logout'
-
+  $('.loader').html("<img class='avatar' src='#{user.image}' /><div class='text'>#{user.name}</div>")
 
 calendar = ->
   $('.main').fadeIn()

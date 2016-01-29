@@ -67,10 +67,10 @@
   };
 
   renderUser = function() {
-    $('.loader').html("<img class='avatar' src='" + user.image + "' /><div class='text'>" + user.name + "</div>");
-    return $('.loader').click(function() {
+    $('.loader').click(function() {
       return document.location = '/logout';
     });
+    return $('.loader').html("<img class='avatar' src='" + user.image + "' /><div class='text'>" + user.name + "</div>");
   };
 
   calendar = function() {
