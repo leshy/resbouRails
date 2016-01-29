@@ -1155,9 +1155,6 @@ body {
 .animSlow {
   transition: all 1s ease;
 }
-.fc-view {
-  border: 1px solid #262626;
-}
 .login {
   display: none;
   position: absolute;
@@ -1201,6 +1198,9 @@ body {
   display: none;
 }
 .main .import {
+  box-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.2);
+  padding: 1vmin;
+  border: 1px solid gray;
   text-align: center;
   position: relative;
   top: -10vmin;
@@ -1211,6 +1211,10 @@ body {
   padding-top: 2vmin;
   height: 100vmin;
   width: 100vmin;
+}
+.main .calendar .fc-view {
+  box-shadow: 0.5vmin 0.5vmin 0 rgba(1, 1, 1, 0.2);
+  border: 1px solid gray;
 }
 .main .calendar .fc-day {
   transition: all 0.25s ease;
