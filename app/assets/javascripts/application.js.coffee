@@ -76,9 +76,9 @@ calendar = ->
         events = _.map (_.values _.omit ics, 'prodid'), (data) ->
           {
             title: data.summary
-            allDay: true
             start: data.start
             end: data.end
+            allDay: true
           }
 
         calendar 'addEventSource', {

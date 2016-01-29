@@ -105,9 +105,9 @@
           events = _.map(_.values(_.omit(ics, 'prodid')), function(data) {
             return {
               title: data.summary,
-              allDay: true,
               start: data.start,
-              end: data.end
+              end: data.end,
+              allDay: true
             };
           });
           return calendar('addEventSource', {
